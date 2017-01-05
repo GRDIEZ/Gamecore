@@ -1,0 +1,41 @@
+{%   extends "base.html" %}
+{% load staticfiles%}
+
+<head>
+<title>{% block head_title %} {{ instance.title}} | {{block.super}} {% endblock head_title %}</title>
+
+</head>
+
+{% block content %}
+<!-- Body (different for every page) -->
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12 col-not-padded-left-right">
+			<div class="header-home-background">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12" style="height: 100%;">
+							<div class="header-home-text">
+								<h1>Access 'My Account' area<br/> and start playing</h1>
+							</div>
+						
+						</div>
+					</div>					
+				</div>		
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+	
+
+
+	{% endblock content %}
+
+</body>
+</html>

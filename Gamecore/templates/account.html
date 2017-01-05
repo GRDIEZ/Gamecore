@@ -1,0 +1,154 @@
+{%   extends "base.html" %}
+{% load staticfiles%}
+
+<head>
+	<title>{% block head_title %}  {{block.super}} {% endblock head_title %}</title>
+
+	{% block head_rest %}  {{block.super}} {% endblock head_rest %}
+
+</head>
+
+{% block navigation %}  {{block.super}} {% endblock navigation %}
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="header-background-image-container header-background-image-container-account">
+			<div class="header-background-image header-background-image-account">			
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row inner-content-header bg-box-shadow box-shift-up">
+		<div class="col-xs-2 col-sm-3">
+			<div class="side-nav-header">
+				<h2>My Account</h2>
+			</div>
+		</div>
+		<div class="col-xs-10 col-sm-9 inner-content-header-title-container">
+			<div class="inner-content-header-title">				
+					<h2> {{ nickname }}</h2><!--Dynamic Player Name here?-->			
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2 col-sm-3 side-nav col-not-padded-left-right">
+			{% include 'sidenav.html' %}
+		</div>
+
+		<div class="col-xs-10 col-sm-9 inner-content">
+			<div class="row padding-top">
+				<div class="col-sm-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Message from the Board:</h3>
+						</div>
+						<div class="panel-body">
+							<h4> {{ active_Player.welcoming_message }}</h4>
+							<!--  <h4>You beat Cody from Port Jackson Partners!</h4>
+							<p>5 - 2</p>
+							<p>You are now 3<sup>rd</sup> best player overall on the leaderboard!</p>
+							<h4>Share highlights and stats on social media:</h4>-->
+							<!-- <div class="row">
+								<div class="col-xs-4">
+									<a class="btn btn-default" href="#" role="button">Facebook</a>
+								</div>
+								<div class="col-xs-4">
+									<a class="btn btn-default" href="#" role="button">Twitter</a>
+								</div>
+								<div class="col-xs-4">
+									<a class="btn btn-default" href="#" role="button">WhatsApp</a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4">
+									<a class="btn btn-default" href="#" role="button">LinkedIn</a>
+								</div>
+								<div class="col-xs-4">
+									<a class="btn btn-default" href="#" role="button">Twitch</a>
+								</div>
+								<div class="col-xs-4">
+									<a class="btn btn-default" href="#" role="button">Twitch</a>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">My Profile</h3>
+						</div>
+						<div class="panel-body">
+							<p>Game ID: {{ active_Player.nickname }} </p>
+							<!--<ul>								
+								<li><p></p></li>
+							</ul>-->
+							<p>Full Name: {{ active_Player.first_name }} {{ active_Player.last_name }} </p>
+							<!--<ul>								
+								<li><p> </p></li>
+							</ul>-->
+							<p>Company: {{ active_Player.company }} </p>
+							<!--<ul>								
+								<li><p>  </p></li>
+							</ul>-->
+							<p>Location: {{ active_Player.city }} </p>
+							<!--<ul>								
+								<li><p> </p></li>
+							</ul>-->
+							<p>Email: {{ active_Player.email }}</p>
+							<!--  <ul>								
+								<li><p></p></li>
+							</ul>-->													
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">My Upcoming Matches</h3>
+						</div>
+						
+						
+						<div class="panel-body">
+							<ul>
+								{% for match in match_list %}
+								 {% if forloop.counter < 3 %}
+									<p>MATCH #{{ match.id }}</p>
+									    <li> Against: {{ match.player2_id }}</li>
+									    <li> On: {{ match.Game }}</li>
+									    <li> When: {{ match.timeDate }}</li>
+									    <br/>
+								 {% endif %}
+								{% endfor %}
+							</ul>
+							<!-- <p>Tue. November 2, 8 pm</p>
+							<ul>								
+								<li><p>FIFA17 @ PS4 vs </p></li>
+								<li><p>TheButcher2017 (Strategy&)</p></li>
+							</ul>
+							<p>Tue. November 2, 8 pm</p>
+							<ul>								
+								<li><p>FIFA17 @ PS4 vs </p></li>
+								<li><p>TheButcher2017 (Strategy&)</p></li>
+							</ul>
+							-->										
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</div>
+</div>
+
+
+{% endblock content %}
+
+{% block footer %}  {{block.super}} {% endblock footer %}
+
+

@@ -1,0 +1,128 @@
+{%   extends "base.html" %}
+{% load staticfiles%}
+
+<head>
+	<title>{% block head_title %}  {{block.super}} {% endblock head_title %}</title>
+
+	{% block head_rest %}  {{block.super}} {% endblock head_rest %}
+
+</head>
+
+
+{% block navigation %}
+<div class="nav-home">
+	{{block.super}}
+</div>	
+{% endblock navigation %}
+
+{% block content %}
+<!-- Body (different for every page) -->
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12 col-not-padded-left-right">
+			<div class="header-home-background">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12" style="height: 100%;">
+							<div class="header-home-text">
+								<h1>Ready to<br/>Play?</h1>
+								<div class="row">
+									<div class="col-sm-12" style="margin-top: 15px; margin-left: 5px;">
+										<a class="btn btn-blue"  href="/signup" role="button">Play Now!</a> &nbsp;
+										<a class="text-white text-hover-yellow" href="/instructions" role="button"><i class="fa fa-angle-right" aria-hidden="true"></i> How it Works</a>
+									</div>	
+								</div>
+							</div>
+
+
+
+							<div class="text-center positiion-absolute" style="bottom: 50px; width: 100%; ">
+								<a id="scroll-trigger-home-CTA" class="scroll circle-small text-white text-hover-yellow" style="padding-top: 16px; display: inline-block;" href="#" class="text-white text-hover-yellow" role="button"><i class="fa fa-angle-down" aria-hidden="true"></i></a>									
+							</div>							
+						</div>
+					</div>					
+				</div>		
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bg-blue">
+	<div class="container position: relative bg-blue scroll-destination-home-CTA">
+		<div class="row padding-top">
+			<div class="col-sm-12 col-md-8 ">
+				<h1 class="text-white">Do You enjoy playing video games with people in your industry?</h1>
+				<p class="text-white">Compete in a league with your colleagues against other gamers in your industry. GameCore organizes online leagues, as well as live tournaments!</p>
+
+			</div>			
+			<div class="col-md-4 visible-md visible-lg" style="border-top: 20px solid #ccc;border-left: 20px solid #ccc;border-right: 20px solid #ccc;">
+				<div class="row text-center">
+					<div class="col-xs-6">
+						<h1 class="text-shadow" style="font-size: 180px;">F</h1>	
+					</div>
+					<div class="col-xs-6">
+						<h1 class="text-shadow" style="font-size: 180px; position: relative; z-index: 200; color: #fff;">I</h1>	
+					</div>
+				</div>	
+				<div class="row" style="position: absolute; top: -40px;">
+					<div class="col-sm-12">
+						<img class="full-width" src={% static "img/FIFA.png" %} />	
+					</div>
+				</div>		
+			</div>
+			</div>
+		</div>
+	</div>	
+	<div class="container position-relative">
+		<div class="row padding-bottom">
+			<div class="col-sm-12 col-md-8">					
+				<h1>FIFA 20<span style="color: #ffda18;">17</span> pre-season open now</h1>
+				<p>Win our free pre-season and earn a $100 EB Games voucher! </p>
+				<br/>
+				<a class="btn btn-default"  href="#" role="button">Sign Up Now!</a>		
+			</div>
+			<div class="col-md-4 visible-md visible-lg" style="border-bottom: 20px solid #ccc;border-left: 20px solid #ccc;border-right: 20px solid #ccc;">
+				<div class="row text-center">
+					<div class="col-xs-6">
+						<h1 class="text-shadow"  style="font-size: 180px;">F</h1>	
+					</div>
+					<div class="col-xs-6">
+						<h1 class="text-shadow"  style="font-size: 180px;">A</h1>	
+					</div>
+				</div>						
+			</div>
+		</div>
+	</div>	
+
+
+
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 col-not-padded-left-right">
+				<div class="header-home-bottom-background">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12 text-center" style="padding-top: 50px;">
+								<h3 class="text-white">Play with peers</h3>
+								<h1 style="margin-top: 10px;" class="text-white text-uppercase">	Crush your competition!</h1>	
+								<h3 class="text-white">Connect with colleagues</h3>
+								<br/>
+								<a class="btn btn-default"  href="/signup" role="button">Play Now!</a>
+							</div>
+						</div>					
+					</div>		
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	{% endblock content %}
+
+	{% block footer %}  {{block.super}} {% endblock footer %}
+
+

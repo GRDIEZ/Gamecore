@@ -1,0 +1,65 @@
+{%   extends "base.html" %}
+
+<head>
+	<title>{% block head_title %}  Sign up | {{block.super}} {% endblock head_title %}</title>
+
+	{% block head_rest %}  {{block.super}} {% endblock head_rest %}
+
+</head>
+
+{% block navigation %}  {{block.super}} {% endblock navigation %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="header-background-image-container header-background-image-container-signup">
+			<div class="header-background-image header-background-image-signup">			
+			</div>
+		</div>
+	</div>
+</div>	
+
+
+<div class="container">
+	<div class="row">
+
+		<div class='col-sm-4 padding-bottom'>
+			
+			<h3>Already Registered?</h3>
+			<form method='POST' action=''>
+				{% csrf_token %}
+				{{ login_form.as_p}}
+				<input type='submit' class='btn btn-default' name="sign_in" value='Sign in' />
+			</form>
+			
+		</div>
+
+		<div class="col-sm-8 padding-top-bottom bg-blue bg-box-shadow text-white box-shift-up">
+
+			<p style="margin: 0px">If you haven't registered...</p>	
+				<h1 style="margin-top: 0px">Register now!</h1>
+			
+															
+			<form method='POST' action=''>
+				{% csrf_token %}
+				{{ player_form.as_p}}
+				<input type='submit' class='btn btn-default'  name="sign_up" value='Sign up' />
+			</form>
+
+		</div>
+	</div>
+</div>
+	{% if message %}
+    	{% ifnotequal message "" %}
+			<script>
+			    alert('{{ message }}');
+			</script>
+        {% endifnotequal %}
+	{% endif %}
+
+
+{% endblock content %}
+
+{% block footer %}  {{block.super}} {% endblock footer %}
+
+

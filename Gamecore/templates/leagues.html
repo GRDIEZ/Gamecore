@@ -1,0 +1,257 @@
+{%   extends "base.html" %}
+{% load staticfiles%}
+
+<head>
+	<title>{% block head_title %}  {{block.super}} {% endblock head_title %}</title>
+
+	{% block head_rest %}  {{block.super}} {% endblock head_rest %}
+
+</head>
+
+{% block navigation %}  {{block.super}} {% endblock navigation %}
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="header-background-image-container header-background-image-container-account">
+			<div class="header-background-image header-background-image-account">			
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row inner-content-header bg-box-shadow box-shift-up">
+		<div class="col-xs-2 col-sm-3">
+			<div class="side-nav-header">
+				<h2>My Account</h2>
+			</div>
+		</div>
+		<div class="col-xs-10 col-sm-9 inner-content-header-title-container">
+			<div class="inner-content-header-title">				
+				<h2>{{ nickname }}</h2><!--Dynamic Player Name here?-->			
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2 col-sm-3 side-nav col-not-padded-left-right">
+			{% include 'sidenav.html' %}
+		</div>
+
+		<div class="col-xs-10 col-sm-9 inner-content">
+			<div class="row padding-top">
+				<div class="col-sm-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Ongoing leagues</h3>
+						</div>
+						<div class="panel-body">
+							<p>PlayStation 4 FIFA17</p>
+									<div class='col-sm-5' style="position: relative; z-index: 200;">
+										<img class="full-width" src={% static "img/fifa17_mini.png" %} style="width:177px;height:128px;"/>
+									</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-8">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Click on these leagues if you would like to play:</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="col-sm-12 text-right">
+									<!-- http://stackoverflow.com/questions/17599035/django-how-can-i-call-a-view-function-from-template -->
+										<form action="#" method="get">
+											<input class="btn btn-default" type='submit' value="PlayStation Rocket League" name="rocket"/>
+										<img class="full-width" src={% static "img/rocket_league_mini.png" %} style="width:177px;height:128px;"/>
+										</form>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="col-sm-12 text-right">
+									<!-- http://stackoverflow.com/questions/17599035/django-how-can-i-call-a-view-function-from-template -->
+										<form action="#" method="get">
+											<input class="btn btn-default" type='submit' value="PlayStation Battlefield 1" name="battle"/>
+										<img class="full-width" src={% static "img/battlefield.png" %} style="width:177px;height:128px;"/>
+										</form>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="col-sm-12 text-right">
+									<!-- http://stackoverflow.com/questions/17599035/django-how-can-i-call-a-view-function-from-template -->
+										<form action="#" method="get">
+											<input class="btn btn-default" type='submit' value="PC League of Legends" name="legends"/>
+										<img class="full-width" src={% static "img/lol_mini.jpg" %} style="width:177px;height:128px;"/>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Suggest another league</h3>
+				</div>
+				<div class="panel-body">
+						<form method='POST' action=''>
+							{% csrf_token %}
+							{{ suggestleague_form.as_p}}
+							<input type='submit' class='btn btn-default' value='Click to Suggest' />
+						</form>
+				</div>
+			</div>
+			
+
+			<div class="row">
+				<div class="col-sm-12">
+					<ul class="nav nav-tabs">
+						<li class="active"><a data-toggle="tab" href="#menu1">Ladder</a></li>
+						<li><a data-toggle="tab" href="#menu2">Fixtures</a></li>
+						<!-- <li><a data-toggle="tab" href="#menu3">Leaderboard</a></li>  -->
+					</ul>
+
+					<div class="tab-content">
+						<div id="menu1" class="tab-pane fade in active">
+							<div class="table-responsive">
+								<table class="table table-condensed table-hover">
+									<!-- <table> -->
+									    <tr>
+									    	<thead>
+										    	<th>Position</th>
+										        <th>Nickname</th> 
+										        <th>Company</th>
+										        <th>Points</th>
+										        <th>Wins</th>
+										        <th>Draws</th>
+										        <th>Losses</th>
+										        <th>Goals scored</th>
+										        <th>Goals received</th>
+										        <th>Total shots</th>
+										        <th>Shots on target</th>
+										        <th>Possession</th>
+											</thead>
+										</tr>
+									    {% for item in ladder_entries %}
+									    <tr>
+									    	<tbody> 
+									    		<td>{{ forloop.counter }}</td>
+									        	<td>{{ item.player_id_id }}</td>
+									        	<td>{{ item.company }}</td>
+												<td>{{ item.points }}</td>
+												<td>{{ item.wins }}</td>
+												<td>{{ item.draws }}</td>
+												<td>{{ item.losses }}</td>
+												<td>{{ item.goals_scored }}</td>
+												<td>{{ item.goals_received }}</td>
+												<td>{{ item.total_shots }}</td>
+												<td>{{ item.shots_target }}</td>
+												<td>{{ item.possession }}</td>
+											</tbody>			
+									    </tr>
+									    {% endfor %}
+									</table>
+									<!-- <thead>
+										<tr>
+											<th>Firstname</th>
+											<th>Lastname</th>
+											<th>Email</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>John</td>
+											<td>Doe</td>
+											<td>john@example.com</td>
+										</tr>
+										<tr>
+											<td>Mary</td>
+											<td>Moe</td>
+											<td>mary@example.com</td>
+										</tr>
+										<tr>
+											<td>July</td>
+											<td>Dooley</td>
+											<td>july@example.com</td>
+										</tr>
+									</tbody>
+								</table> -->
+							</div>
+						</div>
+						<div id="menu2" class="tab-pane fade">
+							<ul>
+								{% for match in fixture_entries %}
+									<p>MATCH #{{ match.id }}</p>
+										<li> When: {{ match.timeDate }}</li>
+										<li> On: {{ match.Game }}</li>
+										<li> {{ match.player1 }} from {{ match.company1 }}</li>
+									    <li> vs: {{ match.player2 }} from {{ match.company2 }}</li>
+									    
+									    
+									    <br/>
+								{% endfor %}
+							</ul>
+						</div>
+						<!-- <div id="menu3" class="tab-pane fade">
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">Best player</h3>
+										</div>
+										<div class="panel-body">
+											<ol>
+												<li>BigDanDog</li>
+												<li>BigDanDog</li>
+												<li>BigDanDog</li>												
+											</ol>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">Best company</h3>
+										</div>
+										<div class="panel-body">
+											<ol>
+												<li>BigDanDog</li>
+												<li>BigDanDog</li>
+												<li>BigDanDog</li>												
+											</ol>
+										</div>
+									</div>
+								</div>
+							</div> -->
+
+
+							
+						</div>						
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+	{% if message %}
+    	{% ifnotequal message "" %}
+			<script>
+			    alert('{{ message }}');
+			</script>
+        {% endifnotequal %}
+	{% endif %}
+
+
+{% endblock content %}
+
+{% block footer %}  {{block.super}} {% endblock footer %}
+
+

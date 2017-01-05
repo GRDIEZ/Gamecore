@@ -1,0 +1,110 @@
+{%   extends "base.html" %}
+{% load staticfiles%}
+
+<head>
+	<title>{% block head_title %}  {{block.super}} {% endblock head_title %}</title>
+
+	{% block head_rest %}  {{block.super}} {% endblock head_rest %}
+
+</head>
+
+{% block navigation %}  {{block.super}} {% endblock navigation %}
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="header-background-image-container header-background-image-container-instructions">
+			<div class="header-background-image header-background-image-instructions">			
+			</div>
+		</div>
+	</div>
+</div>	
+<div class="bg-blue">
+	<div class="container">
+		<div class="row padding-bottom">
+			<div class="col-sm-12 text-white">
+
+				<h2>Do you want to represent your company playing FIFA17 against its biggest rivals?</h2>
+				<p>Join a PS4 league on GameCore and we will schedule weekly matches against competitors in your industry at times suitable for you!</p>
+				<p>Win our free pre-season and earn a $100 EB Games voucher!</p>
+				<a class="btn btn-default" href="/signup" role="button">Play Now!</a>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row padding-top">
+		<div class="col-sm-6 col-padded">
+			<h4>How do you schedule the games?</h4>
+			<p>GameCore schedules the games with you and your opponent based on the availability that you have provided under ’My Availability’ in your account</p>
+		</div>
+		<div class="col-sm-6 col-padded">
+			<h4>How does GameCore receive the scores?</h4>
+			<p>The home player takes a picture of the results screen and uploads that on the GameCore platform or sends that to Scores@GameCorePro.com</p>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-padded">
+			<h4>How do I setup the games?</h4>
+			<p>Prior to each game, you will receive your opponent’s PSN ID and all the details for the game. The home team then sets up the game and invites the other player</p>
+		</div>
+		<div class="col-sm-6 col-padded">
+			<h4>Can I play with my colleague in a team?</h4>
+			<p>At this moment, we run the pre-season in 1 vs. 1 mode. However, we soon aim to play with more players per team</p>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row padding-bottom">
+		<div class="col-sm-6 col-padded">
+			<h4>What are the applicable game rules?</h4>
+			<p>Standard FIFA17 rules are applicable, click here for [<a href='#' onclick='overlay()'>the details</a>]</p>
+		</div>
+		<div class="col-sm-6 col-padded">
+			<h4>Does my company need to be involved?</h4>
+			<p>Yes, invite all your colleagues and tell them about your wins! When more than 4 of you are subscribed, we will get in touch with your HR department to invite your office!</p>
+		</div>
+	</div>
+</div>
+
+<!-- https://raventools.com/blog/create-a-modal-dialog-using-css-and-javascript/ -->
+<div id="overlay">
+     <div>
+          <b>GameCore Instructions</b>
+          <p>1.Have user add/confirm TeamGameCore as a friend</p>
+          <p>2.Accept invitation/event from TeamGameCore to join a party 10 minutes before match time</p>
+			<p>3.Add other party members as a friend by clicking the plus symbol next to their username</p>
+			<p>4.Both players open FIFA17</p>
+			<p>5.Home player switches to Online Mode tab and opens Online Friendlies</p>
+			<p>6.Invite the new friend (the opponent) to play</p>
+			<p>7.Each team selects their team/kit/team management and clicks play game</p>
+			<p>8.Have fun!</p>
+			<p>9.Submit screenshot of results</p>
+			
+			<b>Quick Rules</b>
+          		<li>Game settings</li>
+				<li>Half Length: 6 minutes</li>
+				<li>Controls: Any</li>
+				<li>Game Speed: Normal</li>
+				<li>Squad Type: Online</li>
+				<li>Play in Online Friendlies Model</li>
+				<p></p>
+			
+			
+					<b>Click here to [<a href='' onclick='overlay()'>close</a>]</b>
+          	
+     </div>
+</div>
+
+{% endblock content %}
+
+{% block footer %}  {{block.super}} {% endblock footer %}
+
+
+
+

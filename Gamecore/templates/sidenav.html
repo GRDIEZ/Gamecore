@@ -1,0 +1,15 @@
+
+
+{% block sidenav %}
+<ul>
+	<li data-hover-color="#1f59ff"><a href="{% url 'Account' %}"><i class="fa fa-id-card-o" aria-hidden="true"></i> <span>Overview</span></a></li>
+	<li data-hover-color="#0F9BF2"><a href="{% url 'Profile' %}"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span>Edit Profile</span></a></li>
+	<li data-hover-color="#c21cff"><a href="{% url 'Leagues' %}"><i class="fa fa-area-chart" aria-hidden="true"></i> <span>My Leagues & Results</span></a></li>
+	<li data-hover-color="#FA4808"><a href="{% url 'UpcomingGames' %}"><i class="fa fa-calendar" aria-hidden="true"></i> <span>My Upcoming Games</span></a></li>
+	<li data-hover-color="#00C76D"><a href="{% url 'Availability' %}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> <span>My Availability</span></a></li>
+	<li data-hover-color="#EBFF16"><a href="{% url 'UploadResults' %}"><i class="fa fa-upload" aria-hidden="true"></i> <span>Upload Results</span></a></li>
+</ul>
+
+{% endblock sidenav %}
+
+	

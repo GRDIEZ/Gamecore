@@ -1,0 +1,131 @@
+{%   extends "base.html" %}
+{% load staticfiles%}
+
+<head>
+<title>{% block head_title %}  {{block.super}} {% endblock head_title %}</title>
+
+{% block head_rest %}  {{block.super}} {% endblock head_rest %}
+
+</head>
+
+{% block navigation %}  {{block.super}} {% endblock navigation %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="header-background-image-container header-background-image-container-signup">
+			<div class="header-background-image header-background-image-signup">			
+			</div>			
+		</div>
+	</div>
+</div>	
+<div class="bg-blue">
+	<div class="container">
+				<div class="row padding-bottom">
+					<div class="col-sm-12 text-white">
+						<h1>About Us</h1>
+							<p>GameCore is founded by six entrepreneurs who are passionate about building meaningful relationships between gamers that go beyond the corporate workplace. With an untapped gaming community, corporate gaming leagues are the way forward to reconnect those employees that are often hard to engage.</p>
+							<a class="btn btn-default" href="/instructions" role="button">Learn More!</a>					
+					</div>
+				</div>
+			</div>
+</div>
+<div class="container-fluid">
+	<div class="row" style="background-color: #f6f6f6; position: relative; overflow: hidden;">
+		<div class='col-sm-5' style="position: relative; z-index: 200;">
+			<img class="full-width" src={% static "img/Cody.png" %}/>
+		</div>
+		<div class='col-sm-5'>
+			<div  style="position: relative; z-index: 200;">
+			<h3>Cody Aaron<br/>
+				<span style="color: #1f5f99; font-weight; bold; font-size: 12px;">CEO, Founder</span></h3>			
+			<p>Cody is an avid strategy, simulation and sports simulation player, with years of gaming hours under his belt.</p>
+			<p>He was a child of the 90s, so grew up with the NES, PSX, N64 systems. Since that era, he's been primarily a PS player, but his Steam library is not lacking either!</p>
+		</div>			
+		</div>
+		<div  style="position: absolute; bottom:10px; right: 0; z-index: 100;">
+				<i style="font-size: 400px; color: #fff;" class="fa fa-space-shuttle" aria-hidden="true"></i>
+			</div>
+	</div>
+	<div class="row" style="position: relative; overflow: hidden;">
+		<div class='col-sm-5 col-sm-offset-2 col-sm-push-5' style="position: relative; z-index: 200;">
+					<img class="full-width" src={% static "img/Zach.png" %}/>
+		</div>
+		<div class='col-sm-5 col-sm-pull-5' style="position: relative; z-index: 200;">
+			
+			<h3 class="text-right">Zach Pettinger<br/>
+				<span style="color: #1f5f99; font-weight; bold; font-size: 12px;">CEO, Founder</span>
+			</h3>			
+			<p>Zach got his true game training playing World of Warcraft and other MMORPG's on the computer, but has a solid base in every console system dating back to the Nintendo.</p>
+			<p>Nowadays he focuses on pwning friends in FPS's on the PlayStation 4 and is always trying to complete every challenge that a game offers.</p>							
+			</div>	
+
+
+<div  style="position: absolute; bottom: -75px; left: 5%; z-index: 100;">
+				<i style="font-size: 400px; color: #f3f3f3;" class="fa fa-gamepad" aria-hidden="true"></i>
+			</div>
+
+	</div>
+	<div class="row" style="background-color: #f6f6f6; position: relative; overflow: hidden;">
+		<div class='col-sm-5' style="position: relative; z-index: 200;">
+			<img class="full-width" src={% static "img/Andrew.png" %}/>
+		</div>
+		<div class='col-sm-5' style="position: relative; z-index: 200;">
+			<h3>Andrew Cohen<br/>
+				<span style="color: #1f5f99; font-weight; bold; font-size: 12px;">CEO, Founder</span></h3>		
+			<p>Andrew is the marketing guru in the team with a career in sports marketing. His dream is to see gaming make it to the Olympics.</p>
+			<p>He loves engaging with fellow gamers, just don't try beat him in a game of FIFA!</p>
+		</div>
+		<div  style="position: absolute; bottom: -75px; right: 0; z-index: 100;">
+				<i style="font-size: 300px; color: #fff;" class="fa fa-map" aria-hidden="true"></i>
+			</div>		
+	</div>
+	<div class="row" style="position: relative; overflow: hidden;">
+		<div class='col-sm-5 col-sm-offset-2 col-sm-push-5' style="position: relative; z-index: 200;">
+			<img class="full-width" src={% static "img/Isobel.png" %}/>
+		</div>
+		<div class='col-sm-5 col-sm-pull-5' style="position: relative; z-index: 200;">
+			<h3  class="text-right">Isobel Fenton<br/>
+				<span style="color: #1f5f99; font-weight; bold; font-size: 12px;">CEO, Founder</span></h3>
+			<p>Isobel, relatively new to gaming was elated to find out she’s a natural.</p>
+			<p>Isobel currently stands undefeated in FIFA and can confirm the utter joy of defeating your rivals and making the most of the accompanying bragging rights!</p>
+			
+		</div>
+		<div  style="position: absolute; bottom: -75px; left: 5%; z-index: 100;">
+				<i style="font-size: 300px; color: #f3f3f3;" class="fa fa-trophy" aria-hidden="true"></i>
+			</div>		
+	</div>
+	<div class="row" style="background-color: #f6f6f6; position: relative; overflow: hidden;">
+		<div class='col-sm-5' style="position: relative; z-index: 200;">
+			<img class="full-width" src={% static "img/Guillermo.png" %}/>
+		</div>
+		<div class='col-sm-5' style="position: relative; z-index: 200;">
+			<h3>Guillermo Roderigez Diez<br/>
+				<span style="color: #1f5f99; font-weight; bold; font-size: 12px;">CEO, Founder</span></h3>
+			<p>Guillermo loves connecting with professionals. He has been a management consultant for 9 years and he is aware of how relevant it is to connect with people inside and outside the company.</p>
+			<p>He has organised social activities as movie premieres, soccer leagues and social impact activities in order to be close to his peers and clients in an engaging way that also improves his company social image.</p>
+		</div>
+		<div  style="position: absolute; bottom: -75px; right: 5%; z-index: 100;">
+				<i style="font-size: 300px; color: #fff;" class="fa fa-group" aria-hidden="true"></i>
+			</div>
+	</div>
+	<div class="row" style="position: relative; overflow: hidden;">
+		<div class='col-sm-5 col-sm-offset-2 col-sm-push-5' style="position: relative; z-index: 200;">
+			<img class="full-width" src={% static "img/Floris.jpg" %}/>
+		</div>
+		<div class='col-sm-5 col-sm-pull-5' style="position: relative; z-index: 200;">
+			<h3  class="text-right">Floris Jansen<br/>
+				<span style="color: #1f5f99; font-weight; bold; font-size: 12px;">CEO, Founder</span></h3>
+			<p>Yeah, Floris is definitely a better soccer player on the pitch than in FIFA, however, that doesn't make him less competitive!</p>
+			<p>Growing up playing games from the age of 5, he is passionate about the simple games from the good old days. Warcraft 2.</p>
+		</div>
+		<div  style="position: absolute; bottom: -75px; left: 5%; z-index: 100;">
+				<i style="font-size: 300px; color: #f3f3f3;" class="fa fa-soccer-ball-o" aria-hidden="true"></i>
+			</div>
+	</div>
+</div>
+{% endblock content %}
+
+{% block footer %}  {{block.super}} {% endblock footer %}
+
+

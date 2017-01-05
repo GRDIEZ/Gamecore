@@ -1,0 +1,582 @@
+/* Styles specific to this website (not from bootstrap) */
+
+/* We Start with Extra small devices (phones, less than 768px) */
+/* No media query here since this is the default in Bootstrap */
+
+/* Body */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+	margin-bottom: 250px; /* Margin bottom by footer height */
+	color: #3a3a3a; 	
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	line-height: 1.6875;
+	font-weight: normal;
+	letter-spacing: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Utility rules */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+
+a:hover {
+	text-decoration: none;
+}
+
+img.full-width {
+	min-width: 100%;
+	width: 100%
+}
+
+.position-relative {
+	position: relative;
+}
+
+.positiion-absolute {
+	position: absolute;
+}
+
+.circle-small {
+	border: 1px solid #fff; 
+	border-radius: 50%; 
+	width: 50px; 
+	height: 50px;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.text-shadow {
+	text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.text-white {
+	color: #fff;
+}
+
+.text-hover-yellow:hover {
+	color: #ffda18;
+}
+
+.btn {
+	border-radius: 0px;
+	font-weight: bold;
+}
+
+.btn-white {
+	background-color: #fff;
+	color: #2b2b2b;
+}
+
+.btn-blue {
+	background-color: #fff;
+	color: #1f59ff;
+}
+
+.btn-blue:hover {
+	background-color: #1f59ff;
+	color: #fff;
+}
+
+.btn-orange {
+	background-color: #fff;
+	color: #FA4808;
+}
+
+.btn-orange:hover {
+	background-color: #FA4808;
+	color: #fff;
+}
+
+.bg-blue {
+	background-color: #1f59ff;
+}
+
+.bg-box-shadow {
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.31);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.31);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.31);
+}
+
+.tab-content {
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	padding: 15px;
+}
+
+/* Forms */
+
+form > p {
+    margin-bottom: 15px;
+}
+
+form > p input[type=text] {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+/* Container rules */
+.padding-top {
+	padding-top: 25px;
+}
+
+.padding-bottom {
+	padding-bottom: 25px;
+}
+
+.padding-top-bottom {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.col-not-padded-left-right {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+/* Nav */
+a.navbar-brand {
+	background-image: url('/static/img/GameCore.png');
+	width: 182px;	
+	height: 75px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.navbar-default {
+	border: none;
+}
+
+.navbar-toggle {
+	margin-top: 22px;
+}
+
+.navbar {
+	margin: 20px 0;
+	z-index: 200;
+}
+
+.navbar-nav {
+	margin: 0;
+}
+
+	.navbar-default .navbar-nav>li>a {
+		line-height: 35px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		margin-top: 20px;	
+		font-weight: bold;	
+		text-transform: uppercase;
+	}
+
+		.navbar-default .navbar-nav>li>a i {
+			line-height: 35px;
+		}	
+
+	.navbar-collapse {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+		border-color: #fff;
+	}
+
+	.nav-home .navbar-default .navbar-nav>li>a {
+		color: #777;
+	}
+
+	.nav-home .navbar-default .navbar-nav>li>a:hover {
+		color: #2b2b2b;
+	}
+
+	.nav-home .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+		color: #2b2b2b;
+	}
+
+
+/* Header */
+.header-home-background {
+	background-image: url('/static/img/home_960x540.jpg');
+	background-size: cover;
+	background-position: center center;
+	height: 540px;
+	position: relative;
+}
+
+.header-home-text {
+	position: absolute;
+	top: 35%;
+	left: 10%;
+	color: #fff;
+	text-transform: uppercase;
+} 
+
+.header-home-text h1 {
+	font-size: 60px;
+	line-height: 50px;
+	letter-spacing: 0px;
+	margin: 0px;
+	text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header-home-bottom-background {
+	background-image: url('/static/img/Rocket-League-Narrow.png');
+	background-size: cover;
+	background-position: center center;
+	height: 304px;
+	position: relative;
+}
+
+.header-background-image-container {
+    position: relative;
+}
+
+.header-background-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.header-background-image-container-instructions {
+	height: 400px;
+}
+
+.header-background-image-instructions {
+	background-image: url('/static/img/Instructions.jpg');	
+}
+
+.header-background-image-container-signup {
+	height: 400px;
+}
+
+.header-background-image-signup {
+	background-image: url('/static/img/Signup.jpg');
+}
+
+.header-background-image-container-account {
+	height: 304px;
+}
+
+.header-background-image-account {
+	background-image: url('/static/img/Rocket-League-Narrow.png');
+}
+
+.header-background-image-container-contact {
+	height: 500px;
+}
+
+/* Side-Nav */
+.side-nav-header, .inner-content-header {
+	height: 75px;	
+	background-color: #1f59ff;
+	z-index: 200;
+	position: relative;
+}
+
+.side-nav-header h2  {
+	line-height: 75px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+	margin-right: 15px;
+	color: #fff;
+	display: none;
+}
+
+.inner-content-header-title {
+	line-height: 75px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: #fff;
+}
+
+.side-nav ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.side-nav ul li {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	border-left: 2px solid #fff;
+}
+
+
+.side-nav ul li a {
+	color: #777;
+}
+
+.side-nav ul li a:hover {
+	text-decoration: none;
+}
+
+.side-nav ul li a span {
+	display: none;
+	margin-left: 5px;
+}
+
+/* Inner Content */
+.inner-content-header-title-container {
+	border-left: 1px solid #fff;
+}
+
+.inner-content-header-title {
+	text-align: right;
+}
+
+.inner-content-header-title h2 {
+	margin: 0;
+	line-height: 75px;
+}
+
+.box-shift-up {
+	margin-top: 0px;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 250px; /* Set the fixed height of the footer here */
+  background-color: #f9f9f9;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.footer ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.footer a {
+	color: #2b2b2b;
+}
+
+.footerLogo {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.footerLogo a img {
+	max-width: 160px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {	
+	/* Body */
+	/* Utility rules */
+	/* Container rules */
+	/* Nav */
+	/* Header */	
+	/* Side-Nav */	
+	.side-nav ul li {
+		text-align: left;
+		padding-left: 25px;
+	}
+
+	/* Inner Content */
+	.box-shift-up {
+		margin-top: -35px;
+	}
+	/* Footer */
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	/* Body */
+	body {
+		margin-bottom: 200px; /* Margin bottom by footer height */
+	}
+	/* Utility rules */
+	/* Container rules */
+	/* Nav */	
+	.nav-home a.navbar-brand {
+		background-image: url('/static/img/GameCore_white.png');
+	}
+
+	.navbar-default {
+		border: none;
+		background-color: inherit;
+	}
+		
+
+	.nav-home .navbar-default .navbar-nav>li>a, .nav-home .navbar-default .navbar-nav>li>a:hover {
+		color: #fff;
+	}
+
+	.nav-home .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+		color: #fff;
+	}
+
+	.navbar-default .navbar-nav>li>a:hover, .navbar-nav>li>a.active, .navbar-default .navbar-nav>.open>a {
+		border-bottom: 1px solid #1f59ff;		
+	}
+
+	.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+		background-color: inherit;
+		color: #2b2b2b;
+	}
+
+	.nav-home .navbar-default .navbar-nav>.open>a, .nav-home .navbar-default .navbar-nav>.open>a:focus, .nav-home .navbar-default .navbar-nav>.open>a:hover {
+		color: #fff;
+	}
+
+	/* Header */
+	.header-home-text h1 {
+		font-size: 100px;
+		line-height: 80px;
+	}	
+
+	.header-home-background {
+		margin-top: -115px;
+	}
+
+	.header-home-background {
+		height: 800px;
+	}
+
+	.header-home-background {
+		background-image: url('/static/img/home_1440x810.jpg');
+	}
+
+	/* Side-Nav */
+	.side-nav-header h2 {
+		display: block;
+	}
+
+	.side-nav ul li {
+		padding-left: 10px;
+	}
+
+	.side-nav ul li a span {
+		display: inline-block;
+	}
+	/* Inner Content */
+	/* Footer */
+	.footer {
+		height: 200px; /* Set the fixed height of the footer here */
+	}
+
+	.footerLogo {
+		text-align: left;
+	}
+
+}
+
+/* Custom Navigation Breakpoint */
+@media (max-width: 991px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}
+
+
+/* Large devices (large desktops, 1170px and up) */
+@media (min-width: 1170px) {
+	/* Body */
+	/* Utility rules */
+	/* Container rules */
+	/* Nav */
+	/* Header */
+	.header-home-background {
+		background-image: url('/static/img/home_1920x1080.jpg');
+	}
+
+	.header-home-text h1 {
+		letter-spacing: -1px;
+		font-size: 120px;
+		line-height: 100px;
+	}
+	/* Side-Nav */
+	/* Inner Content */
+	/* Footer */
+}
+
+#overlay {
+     visibility: hidden;
+     position: absolute;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:left;
+     z-index: 1000;
+
+}
+
+#overlay div {
+     width:400px;
+     margin: 100px auto;
+     background-color: #fff;
+     border:1px solid #000;
+     padding:15px;
+     text-align:left;
+}

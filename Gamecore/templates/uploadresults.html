@@ -1,0 +1,66 @@
+{%   extends "base.html" %}
+{% load staticfiles%}
+
+<head>
+<title>{% block head_title %}  {{block.super}} {% endblock head_title %}</title>
+
+{% block head_rest %}  {{block.super}} {% endblock head_rest %}
+
+</head>
+
+{% block navigation %}  {{block.super}} {% endblock navigation %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="header-background-image-container header-background-image-container-account">
+			<div class="header-background-image header-background-image-account">			
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row inner-content-header bg-box-shadow box-shift-up">
+		<div class="col-xs-2 col-sm-3">
+			<div class="side-nav-header">
+				<h2>My Account</h2>
+			</div>
+		</div>
+		<div class="col-xs-10 col-sm-9 inner-content-header-title-container">
+			<div class="inner-content-header-title">				
+				<h2>{{ nickname }}</h2><!--Dynamic Player Name here?-->			
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2 col-sm-3 side-nav col-not-padded-left-right">
+			{% include 'sidenav.html' %}
+		</div>
+
+		<div class="col-xs-10 col-sm-9 inner-content">
+			<div class="row padding-top">
+				<div class="col-sm-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Upload Results</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-sm-12">
+									<p>Please, send an email to results@gamecorepro.com with the results of the game.</p>
+									<p>The best way to do it is to send us an image with the result screen that includes the goals and the stats fo the game (e.g. goals, total shots, shots on target, possession)</p>
+								</div>								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>
+{% endblock content %}
+
+{% block footer %}  {{block.super}} {% endblock footer %}
+
+

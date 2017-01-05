@@ -1,0 +1,108 @@
+{% load staticfiles %}
+
+<html>
+
+<head>
+  <title>{% block head_title %} Gamecore {% endblock head_title %}</title>
+  {% block head_rest %}
+  <meta charset="utf-8">
+  <meta name="description" content="GameCore">
+  <meta name="author" content="Guillermo Rodriguez - Floris Jansen - Dan Stevens">
+  <script src="https://use.fontawesome.com/abeda6dec1.js"></script>
+  <!--  <script src="script/gamecore.js"></script>-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href='{% static "css/gamecore.css" %}'>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400|Ubuntu:700" rel="stylesheet">
+  {% endblock head_rest %}
+</head>
+
+<style>
+{% block style %}
+
+{% endblock style %}
+</style>
+
+<body>
+  {% block navigation %}
+  <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'Instructions' %}">How it works</a></li>
+            <li><a href="{% url 'Signup' %}">Play Now</a></li>
+            {% if nickname %}
+            	{% ifnotequal nickname "" %}
+		            <li class="dropdown">
+		              <a href="{% url 'Account' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+		              <ul class="dropdown-menu">
+		                <li><a href="{% url 'Account' %}">Overview</a></li>
+		                <li><a href="{% url 'Profile' %}">Edit Profile</a></li>
+		                <li><a href="{% url 'Leagues' %}">My Leagues & Results</a></li>
+		                <li><a href="{% url 'UpcomingGames' %}">My Upcoming Games</a></li>
+		                <li><a href="{% url 'Availability' %}">My Availability</a></li>
+		                <li><a href="{% url 'UploadResults' %}">Upload Results</a></li>
+		              </ul>
+		            </li>
+            	{% endifnotequal %}
+            {% endif %}
+            <li><a href="{% url 'About' %}">About</a></li>
+            <li><a href="{% url 'Contact' %}">Contact</a></li>
+            <li><a target="_blank" href="https://twitter.com/GameCorePro"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a target="_blank" href="https:///www.facebook.com/TeamGameCore"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!--/.container-fluid -->
+    </nav>
+  </div>
+  {% endblock navigation %}
+
+  {% block content %}
+  {% endblock content %}
+
+  {% include "messages_display.html" %}
+
+  {% block footer %}
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 footerLogo"> 	
+        <a href="#"><img src={% static "img/gamecore.png" %} /></a>			
+        </div>
+        <div class="col-xs-6 col-sm-4">
+          <ul>
+           <li class="bold">Headquarters</li>
+           <li><small>Level 6, 1 O’Connor St.</small></li>
+           <li><small>Sydney NSW 2000</small></li>					
+          </ul>			
+         </div>
+         <div class="col-xs-6 col-sm-4">
+          <ul>
+           <li class="bold">Contact</li>
+           <li><small>board@gamecorepro.com</small></li>
+           <li><a target="_blank" href="https://twitter.com/GameCorePro"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+		   <li><a target="_blank" href="https:///www.facebook.com/TeamGameCore"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>          
+          </ul>				
+        </div>			
+      </div>
+    </div>
+  </footer>
+{% endblock footer %}
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="{% static 'javascript/gamecore.js' %}"></script>
+
+
+</body>
+</html>
+

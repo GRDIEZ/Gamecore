@@ -1,0 +1,70 @@
+{%   extends "base.html" %}
+{% load staticfiles%}
+
+<head>
+<title>{% block head_title %}  {{block.super}} {% endblock head_title %}</title>
+
+{% block head_rest %}  {{block.super}} {% endblock head_rest %}
+
+</head>
+
+{% block navigation %}  {{block.super}} {% endblock navigation %}
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="header-background-image-container header-background-image-container-account">
+			<div class="header-background-image header-background-image-account">			
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row inner-content-header bg-box-shadow box-shift-up">
+		<div class="col-xs-2 col-sm-3">
+			<div class="side-nav-header">
+				<h2>My Account</h2>
+			</div>
+		</div>
+		<div class="col-xs-10 col-sm-9 inner-content-header-title-container">
+			<div class="inner-content-header-title">				
+				<h2>{{ nickname }}</h2><!--Dynamic Player Name here?-->			
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2 col-sm-3 side-nav col-not-padded-left-right">
+			{% include 'sidenav.html' %}
+		</div>
+
+		<div class="col-xs-10 col-sm-9 inner-content">
+			<div class="row padding-top">
+				<div class="col-sm-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">My Availability</h3>
+						</div>
+						<form method='POST' action=''>
+							{% csrf_token %}
+							{{ availability_form.as_p}}
+							<input type='submit' class='btn btn-default' value='Submit availability' />
+						</form>
+						<div class="panel-body">
+							<p>Example: 'I can play every Monday and Tuesday between 7pm and 9pm'.</p>
+							<p>Based on your availability we will arrange the games and let you know your next games.</p>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>
+
+
+{% endblock content %}
+
+{% block footer %}  {{block.super}} {% endblock footer %}
+
+
